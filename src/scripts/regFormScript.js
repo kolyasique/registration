@@ -8,8 +8,9 @@ const data = form.elements;
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.log(data[2].value);
+  console.log(data);
   console.log(event.target.password.value);
+
   const response = fetch('http:localhost:3000/login', {
     method: 'POST',
     headers: {
@@ -23,5 +24,8 @@ form.addEventListener('submit', (event) => {
   response.then((res) => res.json())
     .then((dataRes) => {
       console.log(dataRes);
+      if (dataRes.text === 'Нет такого пользователя') {
+        alert('Нет такого пользователя');
+      }
     });
 });

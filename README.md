@@ -7,4 +7,4 @@
 5. npm i sequelize-cli
 6. Конфигурация файла БД .sequelizerc
 7. npx sequelize init
-8. npx sequelize model:create --name User --attributes name:text,age:integer
+8. npx sequelize model:create --name User --attributes login:text,password:text
